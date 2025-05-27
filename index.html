@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="DistillNeRF: Perceiving 3D Scenes from Single-Glance Images by Distilling Neural Fields and Foundation Model Features.">
-  <meta name="keywords" content="DistillNeRF, generalizable NeRF, autonomous driving, foundation model">
+        content="Deployable and Generalizable Motion Prediction:
+        Taxonomy, Open Challenges and Future Directions">
+  <meta name="keywords" content="Motion Prediction, Autonomous Driving">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DistillNeRF: Perceiving 3D Scenes from Single-Glance Images by Distilling Neural Fields and Foundation Model Features</title>
+  <title>Deployable and Generalizable Motion Prediction:
+    Taxonomy, Open Challenges and Future Directions</title>
   <style>
     .title {
         white-space: nowrap;
     }
-    .highlight {
-        color: #85B737; /* Replace with the desired color */
+    .highlight,
+    .highlight * {          /* 把内部元素也一并设色 */
+      color: #85B737 !important;
     }
+
     .section {
         margin-top: -160px; /* Adjust the value as needed */
     }
@@ -73,48 +77,66 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title"> <span class="highlight">DistillNeRF</span>: Perceiving 3D Scenes from Single-Glance Images by <br> Distilling Neural Fields and Foundation Model Features</h1>
-          <div class="is-size-4 publication-authors">
+          <h1 class="title is-1 publication-title"> <span class="highlight">Deployable and Generalizable Motion Prediction</span>: <br>Taxonomy, Open Challenges and Future Directions</br></h1>
+          <!-- <div class="is-size-4 publication-authors">
             <span class="univerity-block">
               <strong style="color: #85B737;">NeurIPS 2024</strong>
             </span>
-          </div>
+          </div> -->
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-                <a href="https://scholar.google.com.hk/citations?user=HEzCWisAAAAJ&hl=zh-CN">Letian Wang</a><sup>1,2</sup>,</span>
+                <a href="https://letian-wang.github.io/">Letian Wang</a><sup>1</sup>,</span>
               <span class="author-block">
-                <a href="https://seung-kim.github.io/seungkim/">Seung Wook Kim</a><sup>1</sup>,</span>
+                <a href="https://scholar.google.ca/citations?user=Pw0nWeYAAAAJ&hl=en">Marc-Antoine Lavoie</a><sup>1</sup>,</span>
               <span class="author-block">
-                <a href="https://jiawei-yang.github.io/">Jiawei Yang</a><sup>3</sup>,</span>
+                <a href="https://scholar.google.com/citations?user=uSc-h44AAAAJ&hl=en">Sandro Papais</a><sup>1</sup>,</span>
               <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=4xwyGM8AAAAJ&hl=en">Cunjun Yu</a><sup>1,4</sup>,</span>
+                <a href="https://scholar.google.com/citations?user=7AcdtMcAAAAJ&hl=en">Barza Nisar</a><sup>1</sup>,</span><br>
               <span class="author-block">
-                <a href="https://www.borisivanovic.com/">Boris Ivanovic</a><sup>1</sup>,</span><br>
+                <a href="https://research.nvidia.com/person/yuxiao-chen">Yuxiao Chen</a><sup>2</sup>,</span>
               <span class="author-block">
-                <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=jY_Bcd8AAAAJ&view_op=list_works&sortby=pubdate">Steven Waslander</a><sup>2</sup>,</span>
+                <a href="https://wenhao.pub/">Wenhao Ding</a><sup>2</sup>,</span>
               <span class="author-block">
-                <a href="https://yuewang.xyz/">Yue Wang</a><sup>1,3</sup>,</span>
+                <a href="https://www.borisivanovic.com/">Boris Ivanovic</a><sup>2</sup>,</span>
               <span class="author-block">
-                <a href="https://www.cs.utoronto.ca/~fidler/">Sanja Fidler</a><sup>1,2</sup>,</span>
+                <a href="https://hao-shao.com/">Hao Shao</a><sup>3</sup>,</span>
               <span class="author-block">
-                <a href="https://web.stanford.edu/~pavone/">Marco Pavone</a><sup>1,5</sup>,</span>
+                <a href="https://walleclipse.github.io/">Abulikemu Abuduweili</a><sup>4</sup>,</span>
               <span class="author-block">
-                <a href="https://karkus.tilda.ws/">Peter Karkus</a><sup>1</sup>,</span>
+                <a href="https://www.trailab.utias.utoronto.ca/evan-cook">Evan Cook</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=cA9lRBcAAAAJ&hl=en">Yang Zhou</a><sup>1</sup>,</span><br>
+              <span class="author-block">
+                <a href="https://karkus.tilda.ws/">Peter Karkus</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://jiachenli94.github.io/">Jiachen Li</a><sup>5</sup>,</span>
+              <span class="author-block">
+                <a href="http://icontrol.ri.cmu.edu/people/changliu.html">Changliu Liu</a><sup>4</sup>,</span>
+              <span class="author-block">
+                <a href="https://research.nvidia.com/person/marco-pavone">Marco Pavone</a><sup>2,6</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.trailab.utias.utoronto.ca/steven-waslander">Steven L. Waslander</a><sup>1,*</sup></span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>NVIDIA Research,</span>
-            <span class="author-block"><sup>2</sup>University of Toronto,</span>
-            <span class="author-block"><sup>3</sup>University of Southern California,</span><br>
-            <span class="author-block"><sup>4</sup>National University of Singapore,</span>
-            <span class="author-block"><sup>5</sup>Stanford University</span>
+            <span class="author-block"><sup>1</sup>University of Toronto,</span>
+            <span class="author-block"><sup>2</sup>NVIDIA Research,</span>
+            <span class="author-block"><sup>3</sup>Chinese University of Hong Kong,</span><br>
+            <span class="author-block"><sup>4</sup>Carnegie Mellon University,</span>
+            <span class="author-block"><sup>5</sup>University of California, Riverside,</span>
+            <span class="author-block"><sup>6</sup>Stanford University</span>
+
           </div>
+
+          <p class="is-size-5">
+            *Corresponding&nbsp;Author
+          </p>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2406.12095"
+                <a href="https://arxiv.org/abs/2505.09074"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -125,22 +147,22 @@
 
               <!-- Video Link. -->
               <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=HRRmYGubTEU" class="external-link button is-normal is-rounded is-dark">
+                <a href="" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="fab fa-youtube"></i>
                   </span>
-                  <span>Video</span>
+                  <span>Video (Coming Soon)</span>
                 </a>
               </span>
 
-              <!-- Code Link. -->
+              <!-- Gitbook Link. -->
               <span class="link-block">
-                <a href="https://github.com/NVlabs/distillnerf"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code</span>
+                  <span>Gitbook (Coming Soon)</span>
                   </a>
               </span>
 
@@ -180,9 +202,26 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <div class="content has-text-justified">
-          <img src="./static/images/overview.png">
           
-          <p><strong>DistillNeRF is a generalizable model for 3D scene representation, self-supervised by natural sensor streams along with distillation from offline NeRFs and vision foundation models. It supports rendering RGB, depth, and foundation feature images, without test-time per-scene optimization, and enables downstream tasks such as zero-shot 3D semantic occupancy prediction and open-vocabulary text queries.</strong></p>
+          <p><strong>
+            TL;DR: This paper focuses on two key, often underexplored, areas in motion prediction research: deployability
+            and generalizability. <span class="highlight"><strong>The goal is to develop models that can be deployed under realistic standards and
+            generalize from limited seen scenarios to open-world settings</strong></span>. This is particularly relevant for
+            applications like autonomous driving, robotics, and human motion analysis. We aim to emphasize shifting research focus from solely benchmark-driven progress to addressing the
+            complexities and demands of real-world deployment and open-world generalization.
+          </strong></p>
+
+          <p>
+            <strong>
+              Our roadmap is illustrated
+              as following. We posit that the research community needs to revisit
+              <span class="highlight"><strong>four key challenges in the deployable of motion prediction methods</strong></span>,
+              including&nbsp;1) the design of inter-module representations,&nbsp;2) awareness of uncertainty and errors
+              throughout the autonomy stack,&nbsp;3) joint learning across modules,&nbsp;and&nbsp;4) aligning the evaluation
+              with the advancement of overall system performance. <span class="highlight"><strong>We introduce a generalization lifecycle that consists of four
+              key stages</strong></span>, also illustrated in the roadmap: 1) lifelong data engine, 2) training, 3) safety-aware deployment and 4) test-time adaptation.
+            </strong>
+          </p>          
 
         </div>
       </div>
@@ -192,206 +231,198 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section" style="margin-bottom: 1rem;">
   <div class="container is-max-desktop">
     <!-- Concurrent Work. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <div class="content has-text-justified">
-          <img src="./static/images/architecture.png">
+          <img src="./static/images/fig_1-vision.png">
           
-          <p><strong>DistillNeRF model architecture. Left: single-view encoding with two-stage probabilistic depth prediction; Center: multi-view pooling into a sparse hierarchical voxel representation using sparse quantization and convolution; Right: volumetric rendering from sparse hierarchical voxels.</strong></p>
-
+          <p><strong>Roadmap toward deployable and generalizable models for autonomous systems.</strong> (a) Models intended for realworld deployment
+            should be developed and evaluated under realistic settings, which require: (1) adopting inter-module
+            representations that are informative, efficient, and scalable with data; (2) managing uncertainty throughout the autonomy
+            stack; (3) enabling joint learning across modules to promote information sharing and resolve incompatibilities; and (4) aligning
+            evaluation with the performance of the full closed-loop system. (b) The resulting models and evaluation protocols are then
+            integrated into a generalization cycle that: (1) absorbs diverse data to broaden the support of the training distribution; (2)
+            learns representations capable of generalizing across a wide range of operational domains; (3) handles sporadic distribution
+            shifts during deployment to ensure safety; and (4) adapts online to anticipate and respond to episodic distribution changes.
+            The lifelong learning system incrementally updates the database with newly encountered OOD data to expand the data
+            coverage, thereby initiating the next generalization cycle to further expand the operational envelope of the system.</p>
         </div>
       </div>
     </div>
     <!--/ Concurrent Work. -->
+
   </div>
 </section>
 
-
-
-<section class="hero teaser">
+<section class="hero teaser" style="margin-bottom: 4rem;">
   <div class="container is-max-desktop">
-    <h2 class="title is-3" style="color: #85B737;">Capabilities</h2>
-    <p><strong>
-      Given single-frame multi-view cameras as input and without test-time per-scene optimization, DistillNeRF can reconstruct RGB images (row 2), estimate depth (row 3), render foundation model features (rows 4, 5) which enables open-vocabulary text queries (rows 6, 7, 8), and predict binary and semantic occupancy in zero shot (rows 9, 10).
-    </strong></p>
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/ours.mp4"
-                type="video/mp4">
-      </video>
-    </div>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3" style="color: #85B737;">Novel-View Synthesis</h2>
-    <p><strong>
-      Given single-frame multi-view cameras as input and without test-time per-scene optimization, we can synthesize novel views.
-    </strong></p>
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/novel_view_synthesis_feature.mp4"
-                type="video/mp4">
-      </video>
-    </div>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3" style="color: #85B737;">Generalizability</h2>
-    <p><strong>
-      Trained on the nuScenes dataset, our model demonstrates strong zero-shot transfer performance on the unseen Waymo NOTR dataset, achieving decent reconstruction quality (row 2). This quality can be further enhanced by applying simple color alterations to account for camera-specific coloring discrepancies (row 3). After fine-tuning (row 4), our model surpasses the offline per-scene optimized EmerNeRF, achieving higher PSNR (29.84 vs. 28.87) and SSIM (0.911 vs. 0.814).
-    </strong></p>
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline width="105%">
-        <source src="./static/videos/waymo_convert_2scene.mp4"
-                type="video/mp4">
-      </video>
-    </div>
-  </div>
-</section>
-
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3" style="color: #85B737;">Comparisons</h2>
-    <p><strong>
-      Our generalizable DistillNerf is on par with SOTA offline per-scene optimized NeRF method (EmerNerf), and significantly outperforms SOTA generalizable methods (UniPAD and SelfOcc).
-    </strong></p>
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline width="105%">
-        <source src="./static/videos/compare_sota.mp4"
-                type="video/mp4">
-      </video>
-    </div>
-  </div>
-</section>
-
-    <!-- <div class="columns is-centered has-text-centered">
+    <h2 class="title is-3" style="color: #85B737;">Deployability: Perception-Prediction Intergration</h2>
+    <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <div class="content has-text-justified">
-          <p><strong>While we distill offline per-scene optimized NeRF (e.g. EmerNeRF) into DistillNeRF, we observe qualitative phenomenon where the student (DistillNeRF) surpassing the teacher (EmerNeRF), as DistillNeRF is more robust to sensor calibration noises and able to generate smoother predictions.</strong></p>
-          <img src="./static/images/emernerf_compare.png">
-          
-
-        </div>
-      </div>
-    </div> -->
-
-
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <p><strong>Comparing to SOTA offline NeRFs: While we distill offline per-scene optimized NeRF (e.g. EmerNeRF) into DistillNeRF, we observe qualitative phenomenon where the student (DistillNeRF) surpassing the teacher (EmerNeRF), as DistillNeRF is more robust to sensor calibration noises and able to generate smoother predictions.</strong></p>
-
-    <div class="hero-body">
-      <img src="./static/images/emernerf_compare.png">
-    </div>
-  </div>
-</section>
-
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <p><strong>Comparing to SOTA online NeRFs: UniPAD generate blurry RGB reconstruction and shows strong LiDAR-scanning patterns in the rendered depth. SelfOcc generates gray images and inconsistent depth prediction in the high region of the image.</strong></p>
-    <div class="hero-body">
-      <img src="./static/images/online_nerf_compare.png">
-    </div>
-  </div>
-</section>
-
-
-    <!-- <div class="columns is-centered has-text-centered">
-      <div class="column is-full-width">
-        <div class="content has-text-justified">
-          <p><strong>Comparing to other online NeRFs: UniPAD generate blurry RGB reconstruction and shows strong LiDAR-scanning patterns in the rendered depth. SelfOcc generates gray images and inconsistent depth prediction in the high region of the image.</p>
-          <img src="./static/images/online_nerf_compare.png">
-        </div>
-      </div>
-    </div> -->
-    
-  <!-- </div>
-</section> -->
-
-
-
-<!-- <section class="hero teaser">
-
-<div class="columns is-centered has-text-centered">
-  <div class="column is-full-width">
+    <p><strong>
+      In typical autonomy stacks, perception provides essential inputs for motion prediction to infer the
+      future evolution of objects or a scene. <span class="highlight"><strong>The seamless integration between perception and prediction is
+      crucial for efficient information propagation and overall system safety and performance</strong></span>. This integration
+      requires 1) proper design of representations and the interface between the two modules that enable smooth
+      information propagation and efficient computation; 2) propagating, calibrating, and eventually reducing
+      the uncertainties and errors from upstream perception to enable robust prediction; 3) joint learning and
+      temporal information pass of the two modules to facilitating information sharing and align the optimization
+      to the performance of the overall system. These concepts are illustrated in the folowing figure and are explored
+      in greater detail in the paper.
+    </strong></p>
     <div class="content has-text-justified">
-      <img src="./static/images/ablation.png">
-      
-      <p><strong>When removing Distillation from offline NeRFs, we observe downgraded depth prediction accuracy especially in the high region of the image. When removing the parameterized space, the model is only able to predict depth in the limited range.</p>
+      <img src="./static/images/fig_17-perception_integration.png">
+    </div>
+    <p><strong>Integration between perception and prediction</strong> considers the alignment of representations,
+      leveraging perception uncertainty for prediction and temporal feedback of prediction for
+      perception.</p>
+       </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<section class="hero teaser" style="margin-bottom: 4rem;">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3" style="color: #85B737;">Deployability: Prediction-Planning Intergration</h2>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <div class="content has-text-justified">
+    <p><strong>
+      In typical autonomy architectures, 
+      motion prediction provides essential inputs for motion planning to generate safe and efficient ego trajectories.
+      As we approach the end of the autonomy stack, it introduces additional design desiderata beyond accuracy, 
+      <span class="highlight"><strong>placing greater emphasis on real-world closed-loop performance, robustness, and compatibility with planning algorithms.</strong></span>
+      Achieving seamless integration with planning involves 1) choosing suitable representations at the prediction–planning
+      interface that enable effective information propagation, computational efficiency, and compatibility with downstream
+      modules; 2) it also requires properly propagating, calibrating, and ultimately reducing the uncertainties and errors 
+      from prediction to support robust and risk-aware planning; 3) furthermore, joint learning of prediction and planning
+      encourages the design of prediction outputs that are better structured for direct consumption by planning algorithms.
+      These concepts are illustrated in the followin figure and are explored in greater detail in the paper.
+    </strong></p>
+    <div class="content has-text-justified">
+      <img src="./static/images/fig_19-planning_integration.png">
+    </div>
+    <p><strong>Integration between prediction and planning</strong> considers 1) the choices of representations, 2) quantifying, 
+      calibrating, and reducing prediction uncertainty, and 3) planning informed
+      prediction and joint prediction and planning.</p>
+      </div>
     </div>
   </div>
 </div>
-</section> -->
-
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3" style="color: #85B737;">Ablation Studies</h2>
-    <p><strong>
-      <!-- Given single-frame multi-view cameras as input and without test-time per-scene optimization, DistillNeRF can reconstruct RGB images (row 2), estimate depth (row 3), render foundation model features (rows 4, 5) which enables open-vocabulary text queries (rows 6, 7, 8), and predict binary and semantic occupancy in zero shot (rows 9, 10). -->
-      <p><strong>When removing Distillation from offline NeRFs, we observe downgraded depth prediction accuracy especially in the high region of the image. When removing the parameterized space, the model is only able to predict depth in the limited range.</p>
-    </strong></p>
-    <div class="hero-body">
-      <img src="./static/images/ablation.png">
-      
-    </div>
-  </div>
 </section>
 
 
-
-
-<!-- <section class="hero teaser">
+<section class="hero teaser" style="margin-bottom: 4rem;">
   <div class="container is-max-desktop">
-    <h2 class="title is-3" style="color: #85B737;">Generalizability</h2>
+    <h2 class="title is-3" style="color: #85B737;">Deployability: Evaluation</h2>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <div class="content has-text-justified">
     <p><strong>
-      Given single-frame multi-view cameras as input and without test-time per-scene optimization, DistillNeRF can reconstruct RGB images (row 2), estimate depth (row 3), render foundation model features (rows 4, 5) which enables open-vocabulary text queries (rows 6, 7, 8), and predict binary and semantic occupancy in zero shot (rows 9, 10). -->
-      <!-- <p><strong>Trained on the nuScenes dataset, our model demonstrates strong zero-shot transfer performance on the unseen Waymo dataset, achieving decent reconstruction quality. This quality can be further enhanced by applying simple color alterations to account for camera-specific color discrepancies. After fine-tuning, our model surpasses the offline per-scene optimized EmerNeRF, achieving higher PSNR (29.84 vs. 28.87) and SSIM (0.9115 vs. 0.814). -->
-      <!-- </strong></p> -->
-    <!-- <div class="hero-body"> -->
-      <!-- <img src="./static/images/ablation.png"> -->
-      <!--  -->
-    <!-- </div> -->
-  <!-- </div> -->
-<!-- </section> -->
+      In realistic deployment, motion prediction does not operate in isolation, but functions as a critical
+      module within the closed-loop autonomy stack, receiving inputs from upstream localization and perception,
+      and informing downstream planning and control. However, existing benchmarks typically adopt a simplified
+      evaluation setting, where prediction is assessed independently of other modules and in an open-loop manner.
+      Specifically, they often assume idealized, curated perception inputs without accounting for associated
+      noise and errors, and disregard how prediction results are consumed by downstream planning. Moreover,
+      evaluations are typically conducted in open-loop settings, overlooking important aspects such as temporal
+      consistency, ultimate task performance, and computation efficiency. <span class="highlight"><strong>To more accurately reflect real-world
+      64performance, a realistic evaluation framework must incorporate perception-aware metrics, planningoriented
+      metrics, and closed-loop dynamics</strong></span>, which we illustrate in the following figure and discuss in the paper, respectively.
+    </strong></p>
+    <div class="content has-text-justified">
+      <img src="./static/images/fig_20-evaluation.png">
+    </div>
+    <p>To more accurately reflect real-world performance, a realistic evaluation framework must capture
+      implications from <strong>upstream perception, downstream planning, and closed-loop systems.</strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
 
 
-<!-- <section class="section" id="BibTeX">
+<section class="hero teaser" style="margin-bottom: 4rem;">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3" style="color: #85B737;">Generalizable Motion Prediction</h2>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <div class="content has-text-justified">
+    <p><strong>
+      When autonomous systems, such as robots and self-driving cars, are deployed in the real world, they
+      will <span class="highlight"><strong>encounter diverse scenarios varying in many factors such as different environmental geometries, new
+      types of agents, unexpected events (weather, accidents) and adversarial attacks</strong></span>. In such contexts, the
+      models can often be exposed to data that is outside the model's training distribution, where the model can
+      have a significant drop in the performance or even fail to generate reasonable results. A straight-forward
+      solution is to extend the training dataset to cover a wide range of operating scenarios through extensive
+      data collection and labeling. While data collection has proven highly effective in fields like computer vision
+      and natural language processing, where large-scale datasets can be scraped relatively easily, collecting and
+      annotating data for robots and self-driving cars remains costly, inefficient, and often unable to capture
+      the full diversity of possible events. <span class="highlight"><strong>This challenge highlights the need for complementary approaches
+      that enhance generalization and fast adaptation</strong></span>—just as humans generalize from past experiences and
+      quickly adapt to new environments with minimal examples, without forgetting previously acquired skills.
+      <span class="highlight"><strong>Ultimately, robust generalization hinges on the seamless interplay between data, learning signals, and
+      model architectures</strong></span>. To achieve goals in the generalization lifestyle, various approaches have been proposed to advance 
+      the generalization capabilities of predictive models, addressing different aspects such as data, learning signals, and
+      model architectures: 1) Self-Supervised Learning, 2) Domain Generalization and Adaptation, 3) Continual Learning, 
+      4) Out-of-Distribution Detection and Generalization, 5) Data augmentation and synthesis and 6) Foundation Models, 
+      as illustrated in the following figure.
+    </strong></p>
+    <div class="content has-text-justified">
+      <img src="./static/images/fig_21-generalization_approaches_v3.png">
+    </div>
+    <p><strong>An overview of approaches for generalizable motion prediction covered in our paper</strong>. We
+      organize them according to how they differ in terms of 1) data access assumptions as in the x-axis: access
+      to only source data and no target data, access to small-scale target data that is yet smaller than source
+      data such as few-shot or streaming data, and access to large-scale target data that is equal to or larger than
+      source data; 2) their development stage in the y-axis: the approach is applied during pretraining, training,
+      or test time; and 3) the primary focus in the legend—whether they target different generalization tasks
+      tailored to particular use cases, learn generalizable representations through modified or additional learning
+      signal, modify the model architecture or add additional parameters for more robustness and adaptability,
+      or achieve generalization by scaling up the data.</p>
+    
+    </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<section class="hero teaser" style="margin-bottom: 2rem;">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+
+    <pre><code>@misc{wang2025deployablegeneralizablemotionprediction,
+  title        = {Deployable and Generalizable Motion Prediction: Taxonomy, Open Challenges and Future Directions},
+  author       = {Letian Wang and
+                  Marc-Antoine Lavoie and
+                  Sandro Papais and
+                  Barza Nisar and
+                  Yuxiao Chen and
+                  Wenhao Ding and
+                  Boris Ivanovic and
+                  Hao Shao and
+                  Abulikemu Abuduweili and
+                  Evan Cook and
+                  Yang Zhou and
+                  Peter Karkus and
+                  Jiachen Li and
+                  Changliu Liu and
+                  Marco Pavone and
+                  Steven Waslander},
+  year         = {2025},
+  eprint       = {2505.09074},
+  archivePrefix= {arXiv},
+  primaryClass = {cs.RO},
+  url          = {https://arxiv.org/abs/2505.09074}
 }</code></pre>
   </div>
-</section> -->
-
-<section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>@misc{wang2024distillnerf,
-      title={DistillNeRF: Perceiving 3D Scenes from Single-Glance Images by Distilling Neural Fields and Foundation Model Features}, 
-      author={Letian Wang and Seung Wook Kim and Jiawei Yang and Cunjun Yu and Boris Ivanovic and Steven L. Waslander and Yue Wang and Sanja Fidler and Marco Pavone and Peter Karkus},
-      year={2024},
-      eprint={2406.12095},
-      archivePrefix={arXiv},
-      primaryClass={id='cs.CV' full_name='Computer Vision and Pattern Recognition' is_active=True alt_name=None in_archive='cs' is_general=False description='Covers image processing, computer vision, pattern recognition, and scene understanding. Roughly includes material in ACM Subject Classes I.2.10, I.4, and I.5.'}
-    }</code></pre>
-    </div>
-  </section>
+</section>
 
 
 <footer class="footer">
