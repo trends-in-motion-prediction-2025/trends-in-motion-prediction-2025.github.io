@@ -76,34 +76,3 @@ $(document).ready(function() {
     bulmaSlider.attach();
 
 })
-
-<script>
-document.querySelectorAll('.copy-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const targetId = btn.dataset.target;
-    const codeText = document.getElementById(targetId).innerText.trim();
-
-    // 尝试 Clipboard API
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(codeText).then(() => {
-        btn.textContent = 'Copied!';
-        setTimeout(() => (btn.textContent = 'Copy'), 1500);
-      });
-    } else {
-      // 回退方案：创建隐藏 textarea
-      const textarea = document.createElement('textarea');
-      textarea.value = codeText;
-      document.body.appendChild(textarea);
-      textarea.select();
-      try {
-        document.execCommand('copy');
-        btn.textContent = 'Copied!';
-        setTimeout(() => (btn.textContent = 'Copy'), 1500);
-      } catch (err) {
-        alert('Copy failed 😢');
-      }
-      document.body.removeChild(textarea);
-    }
-  });
-});
-</script>

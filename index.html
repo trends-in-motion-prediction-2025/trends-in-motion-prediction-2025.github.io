@@ -34,6 +34,13 @@
     .hero {
             margin-bottom: -80px; /* Adjust this value as needed */
         }
+    /* 让所有 Bulma 容器在大屏全宽 */
+    /* @media screen and (min-width: 1024px) {
+      .container {
+        max-width: 80% !important;
+      }
+    } */
+
   </style>
   
 
@@ -115,7 +122,7 @@
               <span class="author-block">
                 <a href="https://research.nvidia.com/person/marco-pavone">Marco Pavone</a><sup>2,6</sup>,</span>
               <span class="author-block">
-                <a href="https://www.trailab.utias.utoronto.ca/steven-waslander">Steven L. Waslander</a><sup>1,*</sup></span>
+                <a href="https://www.trailab.utias.utoronto.ca/steven-waslander">Steven L. Waslander</a><sup>1</sup></span>
           </div>
 
           <div class="is-size-5 publication-authors">
@@ -128,9 +135,9 @@
 
           </div>
 
-          <p class="is-size-5"><strong>
+          <!-- <p class="is-size-5"><strong>
             *Corresponding&nbsp;Author</strong>
-          </p>
+          </p> -->
 
           <div class="column has-text-centered">
             <div class="publication-links">
@@ -237,7 +244,7 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <div class="content has-text-justified">
-          <img src="./static/images/fig_1-vision.png">
+          <img src="./static/images/fig_1-vision_h.png">
           
           <p><strong>Roadmap toward deployable and generalizable models for autonomous systems.</strong> (a) Models intended for realworld deployment
             should be developed and evaluated under realistic settings, which require: (1) adopting inter-module
@@ -349,6 +356,63 @@
 
 <section class="hero teaser" style="margin-bottom: 4rem;">
   <div class="container is-max-desktop">
+    <h2 class="title is-3" style="color: #85B737;">Deployability: Future Primitives</h2>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <div class="content has-text-justified">
+    <p><strong>
+      The interplay between perception, prediction, and planning demonstrates that motion
+      prediction cannot be treated in isolation. Instead, it requires holistic approaches that account for intermodule information 
+      sharing and compatibility, the cascading effects of errors, and alignment with systemlevel performance. Despite significant 
+      advancements in applying motion prediction to real-world robotics
+      applications, several challenges persist that present <span class="highlight"><strong>opportunities for future research</strong></span>.
+    </strong></p>
+    
+    <p><strong>
+      <span class="highlight"><strong>Holistic Integration</strong></span>: We are revolutionizing motion prediction by integrating it seamlessly into the full autonomy stack, 
+      moving beyond isolated components. This means tackling cascading errors from upstream perception and ensuring alignment with 
+      ultimate system performance, requiring holistic approaches for robust, real-world deployment.
+    </strong></p>
+
+    <p><strong>
+      <span class="highlight"><strong>Real-World Evaluation</strong></span>: Bridging the gap between idealized lab tests and challenging real-world conditions is paramount. 
+      Evaluation must account for uncertainties, reflect downstream utility for planners, and prioritize temporal consistency, 
+      computation latency, and task-oriented metrics. New benchmarks are essential to capture this complexity.
+    </strong></p>
+
+    <p><strong>
+      <span class="highlight"><strong>Task-Oriented Performance</strong></span>: Success isn't just about prediction accuracy, but about enabling ultimate task completion – 
+      like a vehicle reaching its destination safely and efficiently. This demands confident, well-calibrated predictions that 
+      support effective planning, revealing critical issues missed by traditional metrics.
+    </strong></p>
+
+    <p><strong>
+      <span class="highlight"><strong>End-to-End Autonomy</strong></span>: Exploring unified, data-driven frameworks that integrate perception, prediction, and planning offers immense 
+      potential. This trend aims for streamlined pipelines, enhanced scalability, and improved adaptability, promising breakthroughs in 
+      performance, reliability, and robustness.
+    </strong></p>
+
+    <p><strong>
+      <span class="highlight"><strong>Foundation Model Power</strong></span>: Harnessing the capabilities of large foundation models is key to advancing both modular and end-to-end systems. 
+      Overcoming the challenge of collecting scarce motion data requires innovative strategies, alongside developing methods for efficient 
+      deployment under real-time constraints.
+    </strong></p>
+
+    <p><strong>
+      <span class="highlight"><strong>Performance & Deployability</strong></span>: Actively optimizing for both prediction quality and real-world applicability by investigating scalable 
+      architectures, optimizing pipelines, and rethinking designs is critical. Prioritizing low computation latency promotes real-time use 
+      and incentivizes efficient innovation.
+    </strong></p>
+
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<section class="hero teaser" style="margin-bottom: 4rem;">
+  <div class="container is-max-desktop">
     <h2 class="title is-3" style="color: #85B737;">Generalizable Motion Prediction</h2>
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
@@ -387,6 +451,90 @@
       or achieve generalization by scaling up the data.</p>
     
     </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<section class="hero teaser" style="margin-bottom: 4rem;">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3" style="color: #85B737;">Generalization: Future Primitives</h2>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <div class="content has-text-justified">
+    
+    <p><strong>
+      As motion prediction systems are deployed in increasingly diverse and unpredictable environments,
+      generalization becomes a central challenge—requiring models not only to perform well on known domains
+      but also to adapt, recover, or remain robust in the face of distributional shifts and open-world settings. 
+      Several key themes that emerge from our paper persist and present <span class="highlight"><strong>opportunities for future research</strong></span>.
+    </strong></p>
+    
+    <p><strong>
+      <span class="highlight"><strong>Aggressively Scale and Unify Data</strong></span>: A critical priority is scaling up high-quality datasets, either by unifying 
+      existing sources to overcome format and definition discrepancies or by leveraging data synthesis methods. The current 
+      state of motion prediction is severely hampered by a small-data regime and inconsistent datasets, unlike fields like 
+      language and vision with internet-scale data. Models trained on larger datasets demonstrate higher generalization ability.  
+    </strong></p>
+
+    <p><strong>
+      <span class="highlight"><strong>Understand and Quantify Data Distribution</strong></span>: Developing a unified framework and systematic understanding of motion data 
+      distributions is fundamental and needed. Tools are required to characterize dataset coverage, diversity, and scenario 
+      difficulty, moving beyond low-level statistics or handcrafted metrics. This understanding is crucial for fair cross-dataset 
+      benchmarking, designing efficient learning paradigms (like active learning), evaluating the novelty of newly collected or 
+      synthetic data, and guiding the design of generalizable models themselves. 
+    </strong></p>
+
+    <p><strong>
+      <span class="highlight"><strong>Revolutionize Learning Strategies</strong></span>: The optimal pretraining approach for learning informative features that generalize across 
+      diverse data sources remains unclear. Future work should explore and determine effective pretraining objectives and architectures, 
+      potentially finding that contrastive and reconstructive tasks are more effective than standard motion prediction tasks for learning 
+      transferable features during pretraining.
+    </strong></p>
+
+    <p><strong>
+      <span class="highlight"><strong>Unleash the Power of Foundation Models</strong></span>: This is seen as a promising direction toward open-world generalization. 
+      <span class="highlight"><strong>1) Adapting Existing Foundation Models</strong></span>: Given the data limitations in the motion domain compared to vision and language, adapting existing large foundation 
+      models (e.g., LLMs, video generation models) trained on vast internet-scale data is a compelling but still nascent direction. These 
+      models possess emergent reasoning capabilities and common-sense knowledge that could be leveraged for motion tasks. Challenges include 
+      bridging modality gaps, aligning spatial-temporal reasoning with physical constraints, and integrating them into safety-critical systems. 
+      Exploring their potential for zero-shot or few-shot generalization in the motion domain is a key opportunity. <span class="highlight"><strong>2) Developing Motion-Specific 
+      Foundation Models</strong></span>: There is a need for dedicated research on training large motion models specifically designed for the structured, dynamic 
+      nature of motion data. This involves rethinking data unification, determining suitable architectural modules (tokenization, inductive biases), 
+      and developing adaptation strategies for diverse agents, geographies, and scenarios. <span class="highlight"><strong>3) Leveraging Scale</strong></span>: The success of scaling up resources 
+      ("The Bitter Lesson") in achieving human-like robustness and emergent behaviors in other domains suggests that further scaling up large 
+      foundation models could be a path to achieving similar performance in prediction systems.
+    </strong></p>
+
+    <p><strong>
+      <span class="highlight"><strong>Establish Standardized Benchmarks and Unified Evaluation</strong></span>: The current lack of widely accepted cross-dataset benchmarks due to data 
+      inconsistencies impedes progress. Future efforts must focus on establishing unified, realistic evaluation protocols across multiple 
+      tasks, data scales, and metrics. Benchmarking needs to be rethought for regression tasks like motion prediction, moving beyond 
+      coarse-grained approaches that treat entire datasets as OOD to more nuanced definitions. Evaluations should incorporate metrics beyond 
+      just accuracy to include uncertainty estimation, which is crucial for downstream tasks. Fair comparison protocols under equal compute 
+      budgets are also needed.
+    </strong></p>
+
+    <p><strong>
+      <span class="highlight"><strong>Explore Test-Time, Online, and Continual Adaptation</strong></span>: These areas are significantly underexplored but critical for real-world deployment 
+      in dynamic environments. Future research requires both methodological advances and new datasets designed for studying long-term 
+      adaptation over extended time horizons or evolving distributions.
+    </strong></p>
+
+    <p><strong>
+      <span class="highlight"><strong>Improve Out-of-Distribution (OOD) Detection and Generalization</strong></span>: This is critical for safety but currently lacks clear definitions and consistent 
+      evaluation in motion prediction. Future work needs better OOD definitions, improved uncertainty calibration, and principled evaluation metrics 
+      aligned with downstream tasks.
+    </strong></p>
+
+    <p><strong>
+      <span class="highlight"><strong>Embrace Generalization as a Continuous Lifecycle</strong></span>: Future systems must treat generalization not as a static challenge but as a system-level, 
+      continuous lifecycle problem, involving continuous data acquisition, runtime uncertainty estimation, and online adaptation. Encountering new 
+      OOD data in deployment should trigger a new cycle of refinement, potentially involving rethinking architecture, retraining, and updating evaluations.
+    </strong></p>
+
+      </div>
     </div>
   </div>
 </div>
