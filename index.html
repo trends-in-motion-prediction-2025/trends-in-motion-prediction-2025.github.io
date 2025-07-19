@@ -269,6 +269,41 @@
 
 <section class="hero teaser" style="margin-bottom: 4rem;">
   <div class="container is-max-desktop">
+    <h2 class="title is-3" style="color: #4873c2;">Deploying Motion Prediction within Real-World Autonomous Systems</h2>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <div class="content has-text-justified">
+    <p><strong>
+      In autonomous systems that operate in dynamic environments, such as autonomous vehicles and robotics, motion prediction
+       does not act in isolation but functions as one module of closed-loop autonomy stacks by receiving upstream localization 
+       and perception and informing downstream planning and control. Since the 2004 DARPA Grand Challenges, decomposing 
+       autonomous systems into separate modules has become a well-established paradigm. Under this practice, benchmarks have
+        been created to evaluate these modules independently, allowing researchers to develop novel and effective methods for 
+        each component. Specifically, for motion prediction, existing benchmarks often provide curated and noise-free upstream 
+        perception input, usually utilize trajectories as the interface between upstream and downstream modules, and focus solely 
+        on open-loop prediction accuracy without considering the impact on downstream planning and control. This paradigm has 
+        been highly successful, fostering the development of innovative methodologies and representations. However, when deployed 
+        in real-world settings that can deviate from such idealized training conditions, state-of-the-art motion prediction models 
+        can come with reduced effectiveness and reliability in deployment. In this section, we discuss the approaches, challenges, 
+        and perspectives of developing motion prediction models under realistic deployment standards in autonomous systems, where 
+        several key problems emerge: 1) perception-prediction integration; 2) prediction-planning integration; 3) system-level 
+        closed-loop evaluation.
+    </strong></p>
+    <div class="content has-text-justified">
+      <img src="./static/images/fig_17-perception_integration.png">
+    </div>
+    <!-- <p><strong>Integration between perception and prediction</strong> considers the alignment of representations,
+      leveraging perception uncertainty for prediction and temporal feedback of prediction for
+      perception.</p> -->
+       </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser" style="margin-bottom: 4rem;">
+  <div class="container is-max-desktop">
     <h2 class="title is-3" style="color: #4873c2;">Deployability: Perception-Prediction Intergration</h2>
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
@@ -359,7 +394,7 @@
 
 <section class="hero teaser" style="margin-bottom: 4rem;">
   <div class="container is-max-desktop">
-    <h2 class="title is-3" style="color: #4873c2;">Deployability: Future Primitives</h2>
+    <h2 class="title is-3" style="color: #4873c2;">Deployability: Future Outlooks</h2>
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <div class="content has-text-justified">
@@ -442,11 +477,11 @@
     <div class="content has-text-justified">
       <img src="./static/images/fig_21-generalization_approaches_v3.png">
     </div>
-    <p> As in the figure, we organize these approaches according to how they differ in terms of 1) data access assumptions, such as the scale of the data, and 
+    <p><strong> As in the figure, we organize these approaches according to how they differ in terms of 1) data access assumptions, such as the scale of the data, and 
       access to target-domain data; 2) their development stage, such as being applied during pretraining, training,
       or test time; and 3) the primary focus, such as whether they are tailored to particular generalization use cases, learn generalizable representations through modified or additional learning
       signal, modify the model architecture for more robustness and adaptability, or achieve generalization by scaling up the data.
-      Below we introduce the gist of each approache and discuss them in greater details in the paper. </p>
+      Below we introduce the gist of each approache and discuss them in greater details in the paper. </strong></p>
     
 
     <p><strong>
@@ -511,7 +546,7 @@
 
 <section class="hero teaser" style="margin-bottom: 4rem;">
   <div class="container is-max-desktop">
-    <h2 class="title is-3" style="color: #4873c2;">Generalization: Future Primitives</h2>
+    <h2 class="title is-3" style="color: #4873c2;">Generalization: Future Outlooks</h2>
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <div class="content has-text-justified">
@@ -524,19 +559,24 @@
     </strong></p>
     
     <p><strong>
-      <span class="highlight"><strong>Aggressively Scale and Unify Data</strong></span>: A critical priority is scaling up high-quality datasets, either by unifying 
-      existing sources to overcome format and definition discrepancies or by leveraging data synthesis methods. The current 
-      state of motion prediction is severely hampered by a small-data regime and inconsistent datasets, unlike fields like 
-      language and vision with internet-scale data. Models trained on larger datasets demonstrate higher generalization ability.  
-    </strong></p>
-
-    <p><strong>
-      <span class="highlight"><strong>Understand and Quantify Data Distribution</strong></span>: Developing a unified framework and systematic understanding of motion data 
-      distributions is fundamental and needed. Tools are required to characterize dataset coverage, diversity, and scenario 
+      <span class="highlight"><strong>Data Scaling and Distribution Understanding</strong></span>: A critical priority is scaling up high-quality datasets, either by unifying 
+      existing sources to overcome format and definition discrepancies, by developping efficient data collection pipelines, or by leveraging data synthesis methods. The current 
+      state of motion prediction is severely hampered by a small-data regime and inconsistent datasets, unlike fields such as 
+      language and vision with internet-scale data, where models trained on larger datasets demonstrate higher generalization ability. 
+      Meanwhile, as datasets scale, simply adding more data is not sufficient. Understanding and quantifying the underlying data distribution becomes essential to ensure diversity, 
+      avoid redundancy, and guide efficient data usage. Tools are required to characterize dataset coverage, diversity, and scenario 
       difficulty, moving beyond low-level statistics or handcrafted metrics. This understanding is crucial for fair cross-dataset 
       benchmarking, designing efficient learning paradigms (like active learning), evaluating the novelty of newly collected or 
       synthetic data, and guiding the design of generalizable models themselves. 
     </strong></p>
+
+    <!-- <p><strong>
+      <span class="highlight"><strong>Understand and Quantify Data Distribution</strong></span>: Developing a unified framework and systematic understanding of motion data 
+      distributions is fundamental. Tools are required to characterize dataset coverage, diversity, and scenario 
+      difficulty, moving beyond low-level statistics or handcrafted metrics. This understanding is crucial for fair cross-dataset 
+      benchmarking, designing efficient learning paradigms (like active learning), evaluating the novelty of newly collected or 
+      synthetic data, and guiding the design of generalizable models themselves. 
+    </strong></p> -->
 
     <p><strong>
       <span class="highlight"><strong>Revolutionize Learning Strategies</strong></span>: The optimal pretraining approach for learning informative features that generalize across 
