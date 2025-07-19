@@ -437,8 +437,8 @@
       model architectures</strong></span>. To achieve goals in the generalization lifestyle, various approaches have been proposed to advance 
       the generalization capabilities of predictive models, addressing different aspects such as data, learning signals, and
       model architectures: 1) Self-Supervised Learning, 2) Domain Generalization and Adaptation, 3) Continual Learning, 
-      4) Out-of-Distribution Detection and Generalization, 5) Data augmentation and synthesis and 6) Foundation Models, 
-      as illustrated in the following figure.
+      4) Out-of-Distribution Detection and Generalization, 5) Data augmentation and synthesis and 6) Foundation Models. 
+      We illustrate them as below, and discuss them in greater details in the paper.
     </strong></p>
     <div class="content has-text-justified">
       <img src="./static/images/fig_21-generalization_approaches_v3.png">
@@ -453,6 +453,60 @@
       signal, modify the model architecture or add additional parameters for more robustness and adaptability,
       or achieve generalization by scaling up the data.</p>
     
+
+    <p><strong>
+      <span class="highlight"><strong>Self-Supervised Learning</strong></span>: Self-supervised (SSL) methods use proxy tasks, such as 
+      trajectory reconstruction and contrastive learning, to learn informative and transferable representations in addition to the 
+      original prediction supervision. 
+      This can either be done sequentially, where SSL methods are used as a pretraining step, or simultaneously in multi-task learning, 
+      where the model is optimized for both SSL and original supervised losses. In addition to the trajectory representation, SSL methods 
+      are also applied to other representations such as point cloud forecasting, video generation, and scene reconstruction. 
+    </strong></p>
+
+    <p><strong>
+      <span class="highlight"><strong>Domain Generalization and Adaptation</strong></span>: Domain generalization is the most 
+      straightforward distribution shift setting and considers the case where a model trained one or more source datasets is tested on one 
+      or more different target datasets in zero-shot. This corresponds to dropping the source pre-trained model in a new environment. 
+      A common training setting involves multiple source datasets, and models, that learn generalizable features and are robust to 
+      distribution shits across the source domains, can perform well on the target domain. In contrast to domain generalization, 
+      domain adaptation considers the case where some target data is also available in addition to the source data. The target 
+      data is often available only in a limited fashion e.g. only a handful of examples in the form of offline batch data or online 
+      streaming data, or without prediction labels. This allows exploiting the target data, and the key challenge is to effectively 
+      leverage the target information to maximize performance without overfitting.  
+    </strong></p>
+
+    <p><strong>
+      <span class="highlight"><strong>Continual Learning</strong></span>: Continual learning extends domain adaptation to a sequence 
+      of new datasets or to a continually changing distribution instead of a single shift. Moreover, compared to domain adaptation 
+      that ignores performance in the source domain, continual learning methods also evaluate and aim to keep the performance on 
+      all previously seen domains, where the challenge is to avoid forgetting past experiences as additional ones are learned.
+    </strong></p>
+
+    <p><strong>
+      <span class="highlight"><strong>Out-of-Distribution Detection and Generalization</strong></span>: A slightly different test case 
+      considers the presence of rare, difficult, or adversarial examples in the test set. These are the out-of-distribution (OOD) 
+      examples. The assumption is that OOD data is so far from standard inlier data that a learned model would not generalize properly 
+      as in domain generalization, and so we consider two strategies. The first is OOD detection, where the objective is to identify 
+      the OOD data and reject it instead of using it as a prediction input. The second is OOD generalization, which still attempts to 
+      generate outputs from the OOD input data, but often requires additional assumptions or models. In practice, this can mean training 
+      with representative outliers or using additional unlearned models as a fall-back strategy to supplement the learned model when 
+      faced with OOD inputs. This can be done in conjunction with OOD detection by routing detected OOD inputs to the robust model.  
+    </strong></p>
+
+    <p><strong>
+      <span class="highlight"><strong>Data Augmentation and Synthesis</strong></span>: A promising direction to improve model generalization 
+      is to enhance existing datasets through data augmentation and synthesis. Data augmentation aims to increase data diversity by applying 
+      transformations or perturbations to existing examples, thereby improving the model's robustness and generalization ability.
+      In motion prediction, augmentation techniques include perturbing agent trajectories, altering scene contexts, modifying initial conditions, 
+      or simulating alternative agent intentions. Beyond augmentation, data synthesis further expands dataset diversity by generating new 
+      examples that capture a broader range of scenarios. Synthesis can introduce challenging and rare situations—such as collisions or adversarial 
+      agents—that are under-presented in the original datasets but are crucial for real-world deployment, particularly in new or unseen test settings.
+      Unlike image-based tasks, motion prediction data is subject to significant structural constraints, such as agent interactions, initial configurations,
+       environment layout, and temporal dynamics. Generated motions must remain physically and behaviorally plausible, respecting map constraints and 
+       interaction dynamics over time. As a result, a key challenge in both data augmentation and synthesis is ensuring realism—that is, generating or modifying
+        data in ways that are consistent with plausible human or agent behavior. 
+    </strong></p>
+
     </div>
     </div>
   </div>
