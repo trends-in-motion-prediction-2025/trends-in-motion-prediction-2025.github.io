@@ -579,10 +579,26 @@
     </strong></p> -->
 
     <p><strong>
-      <span class="highlight"><strong>Revolutionize Learning Strategies</strong></span>: The optimal pretraining approach for learning informative features that generalize across 
-      diverse data sources remains unclear. Future work should explore and determine effective pretraining objectives and architectures, 
-      potentially finding that contrastive and reconstructive tasks are more effective than standard motion prediction tasks for learning 
-      transferable features during pretraining.
+      <span class="highlight"><strong>Revolutionize Modelling and Learning Strategies</strong></span>: 
+      Motion prediction introduces unique structural and temporal challenges that set it apart from vision
+     and language tasks. Unlike static images or discrete text, motion data consists of continuous trajectories
+      shaped by physical laws, spatial constraints, and multi-agent interactions. Generalizable models in this domain
+       must therefore learn representations that generalize across diverse scene layouts, agent types, behavioral patterns,
+        and geographies—while respecting the causal and temporal dependencies inherent in real-world motion.
+      To this end, several key questions remain open. What inductive biases, tokenization strategies, or architectural modules
+       are best suited to represent agents, maps, and interactions effectively? Should representations be built on trajectory-level 
+       abstractions or raw sensor streams like point clouds and videos—which bypass annotation and offer richer context, but
+        introduce high computational costs and struggle to capture discrete agent behaviors? More broadly, the optimal approach 
+        for learning informative, transferable features across heterogeneous motion datasets remains unclear—highlighting the 
+        need for further research into motion-specific pretraining objectives, scalable architectures, and adaptation strategies.
+      Ultimately, developing such models will require rethinking not only training but also deployment—encompassing how to fine-tune
+      models for specific downstream tasks, and how to ensure robust generalization under distribution shifts through
+        test-time OOD detection, generalization, and adaptation.
+
+      <!-- The optimal pretraining approach for learning informative features that generalize across  -->
+      <!-- diverse data sources remains unclear. Future work should explore and determine effective pretraining objectives and architectures,  -->
+      <!-- potentially finding that contrastive and reconstructive tasks are more effective than standard motion prediction tasks for learning  -->
+      <!-- transferable features during pretraining. -->
     </strong></p>
 
     <p><strong>
