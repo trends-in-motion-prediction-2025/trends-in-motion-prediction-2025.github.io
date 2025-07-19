@@ -435,23 +435,18 @@
       quickly adapt to new environments with minimal examples, without forgetting previously acquired skills.
       <span class="highlight"><strong>Ultimately, robust generalization hinges on the seamless interplay between data, learning signals, and
       model architectures</strong></span>. To achieve goals in the generalization lifestyle, various approaches have been proposed to advance 
-      the generalization capabilities of predictive models, addressing different aspects such as data, learning signals, and
-      model architectures: 1) Self-Supervised Learning, 2) Domain Generalization and Adaptation, 3) Continual Learning, 
+      the generalization capabilities of predictive models, including 1) Self-Supervised Learning, 2) Domain Generalization and Adaptation, 3) Continual Learning, 
       4) Out-of-Distribution Detection and Generalization, 5) Data augmentation and synthesis and 6) Foundation Models. 
-      We illustrate them as below, and discuss them in greater details in the paper.
+
     </strong></p>
     <div class="content has-text-justified">
       <img src="./static/images/fig_21-generalization_approaches_v3.png">
     </div>
-    <p><strong>An overview of approaches for generalizable motion prediction covered in our paper</strong>. We
-      organize them according to how they differ in terms of 1) data access assumptions as in the x-axis: access
-      to only source data and no target data, access to small-scale target data that is yet smaller than source
-      data such as few-shot or streaming data, and access to large-scale target data that is equal to or larger than
-      source data; 2) their development stage in the y-axis: the approach is applied during pretraining, training,
-      or test time; and 3) the primary focus in the legend—whether they target different generalization tasks
-      tailored to particular use cases, learn generalizable representations through modified or additional learning
-      signal, modify the model architecture or add additional parameters for more robustness and adaptability,
-      or achieve generalization by scaling up the data.</p>
+    <p> As in the figure, we organize these approaches according to how they differ in terms of 1) data access assumptions, such as the scale of the data, and 
+      access to target-domain data; 2) their development stage, such as being applied during pretraining, training,
+      or test time; and 3) the primary focus, such as whether they are tailored to particular generalization use cases, learn generalizable representations through modified or additional learning
+      signal, modify the model architecture for more robustness and adaptability, or achieve generalization by scaling up the data.
+      Below we introduce the gist of each approache and discuss them in greater details in the paper. </p>
     
 
     <p><strong>
