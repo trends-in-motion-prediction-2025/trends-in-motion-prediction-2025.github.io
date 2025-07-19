@@ -248,7 +248,7 @@
           
           <p><strong>Roadmap toward deployable and generalizable models for autonomous systems.</strong> 
             
-            (a) Models intended for realworld deployment should be developed and evaluated under realistic settings, which require: (1) adopting inter-module
+            (a) Models intended for real-world deployment should be developed and evaluated under realistic settings, which require: (1) adopting inter-module
             representations that are informative, efficient, and scalable with data; (2) managing uncertainty throughout the autonomy
             stack; (3) enabling joint learning across modules to promote information sharing and resolve incompatibilities; and (4) aligning
             evaluation with the performance of the full closed-loop system. 
@@ -277,9 +277,9 @@
       In typical autonomy stacks, perception provides essential inputs for motion prediction to infer the
       future evolution of objects or a scene. <span class="highlight"><strong>The seamless integration between perception and prediction is
       crucial for efficient information propagation and overall system safety and performance</strong></span>. This integration
-      requires 1) proper design of representations and the interface between the two modules that enable smooth
-      information propagation and efficient computation; 2) propagating, calibrating, and eventually reducing
-      the uncertainties and errors from upstream perception to enable robust prediction; 3) joint learning and
+      requires 1) <span class="highlight"><strong>Representation:</strong></span> proper design of representations and the interface between the two modules that enable smooth
+      information propagation and efficient computation; 2) <span class="highlight"><strong>Uncertainty:</strong></span> propagating, calibrating, and eventually reducing
+      the uncertainties and errors from upstream perception to enable robust prediction; 3) <span class="highlight"><strong>Joint Learning:</strong></span> joint learning and
       temporal information pass of the two modules to facilitating information sharing and align the optimization
       to the performance of the overall system. These concepts are illustrated in the folowing figure and are explored
       in greater detail in the paper.
@@ -287,9 +287,9 @@
     <div class="content has-text-justified">
       <img src="./static/images/fig_17-perception_integration.png">
     </div>
-    <p><strong>Integration between perception and prediction</strong> considers the alignment of representations,
+    <!-- <p><strong>Integration between perception and prediction</strong> considers the alignment of representations,
       leveraging perception uncertainty for prediction and temporal feedback of prediction for
-      perception.</p>
+      perception.</p> -->
        </div>
       </div>
     </div>
@@ -307,19 +307,19 @@
       motion prediction provides essential inputs for motion planning to generate safe and efficient ego trajectories.
       As we approach the end of the autonomy stack, it introduces additional design desiderata beyond accuracy, 
       <span class="highlight"><strong>placing greater emphasis on real-world closed-loop performance, robustness, and compatibility with planning algorithms.</strong></span>
-      Achieving seamless integration with planning involves 1) choosing suitable representations at the prediction–planning
+      Achieving seamless integration with planning involves 1) <span class="highlight"><strong>Representation:</strong></span> choosing suitable representations at the prediction–planning
       interface that enable effective information propagation, computational efficiency, and compatibility with downstream
-      modules; 2) it also requires properly propagating, calibrating, and ultimately reducing the uncertainties and errors 
-      from prediction to support robust and risk-aware planning; 3) furthermore, joint learning of prediction and planning
+      modules; 2) <span class="highlight"><strong>Uncertainty:</strong></span> it also requires properly propagating, calibrating, and ultimately reducing the uncertainties and errors 
+      from prediction to support robust and risk-aware planning; 3) <span class="highlight"><strong>Joint Learning:</strong></span> furthermore, joint learning of prediction and planning
       encourages the design of prediction outputs that are better structured for direct consumption by planning algorithms.
       These concepts are illustrated in the followin figure and are explored in greater detail in the paper.
     </strong></p>
     <div class="content has-text-justified">
       <img src="./static/images/fig_19-planning_integration.png">
     </div>
-    <p><strong>Integration between prediction and planning</strong> considers 1) the choices of representations, 2) quantifying, 
+    <!-- <p><strong>Integration between prediction and planning</strong> considers 1) the choices of representations, 2) quantifying, 
       calibrating, and reducing prediction uncertainty, and 3) planning informed
-      prediction and joint prediction and planning.</p>
+      prediction and joint prediction and planning.</p> -->
       </div>
     </div>
   </div>
@@ -334,7 +334,7 @@
       <div class="column is-full-width">
         <div class="content has-text-justified">
     <p><strong>
-      In realistic deployment, motion prediction does not operate in isolation, but functions as a critical
+      As we just discussed above, in realistic deployment, motion prediction does not operate in isolation, but functions as a critical
       module within the closed-loop autonomy stack, receiving inputs from upstream localization and perception,
       and informing downstream planning and control. However, existing benchmarks typically adopt a simplified
       evaluation setting, where prediction is assessed independently of other modules and in an open-loop manner.
@@ -342,15 +342,15 @@
       noise and errors, and disregard how prediction results are consumed by downstream planning. Moreover,
       evaluations are typically conducted in open-loop settings, overlooking important aspects such as temporal
       consistency, ultimate task performance, and computation efficiency. <span class="highlight"><strong>To more accurately reflect real-world
-      64performance, a realistic evaluation framework must incorporate perception-aware metrics, planningoriented
+      performance, a realistic evaluation framework must incorporate perception-aware metrics, planning-oriented
       metrics, and closed-loop dynamics</strong></span>, which we illustrate in the following figure and discuss in the paper, respectively.
     </strong></p>
     <div class="content has-text-justified">
       <img src="./static/images/fig_20-evaluation.png">
-    </div>
+    <!-- </div>
     <p>To more accurately reflect real-world performance, a realistic evaluation framework must capture
       implications from <strong>upstream perception, downstream planning, and closed-loop systems.</strong></p>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
