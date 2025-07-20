@@ -559,7 +559,14 @@
     </strong></p>
     
     <p><strong>
-      <span class="highlight"><strong>Data Scaling and Distribution Understanding</strong></span>: A critical priority is scaling up high-quality datasets, either by unifying 
+      <span class="highlight"><strong>Data Scaling and Distribution Understanding</strong></span>: Despite the demonstrated success of 
+      large-scale datasets in NLP and computer vision, the field of motion prediction remains largely in a small-data regime due to the 
+      costly and labor-intensive process of collecting and annotating motion data. For instance, leading autonomous driving datasets 
+      such as Argoverse, Argoverse 2, and the Waymo Open Motion Dataset (WOMD) contain only 320K, 250K, and 480K data sequences, 
+      respectively—orders of magnitude smaller than datasets in NLP (e.g., GPT-3's 400B-token CommonCrawl) or vision (e.g., JFT's 303M images).
+      This scarcity of data constrains models’ ability to learn rich and transferable representations, ultimately limiting their robustness 
+      and generalization. 
+      Therefore, a critical priority is scaling up high-quality datasets, either by unifying 
       existing sources to overcome format and definition discrepancies, by developping efficient data collection pipelines, or by leveraging data synthesis methods. The current 
       state of motion prediction is severely hampered by a small-data regime and inconsistent datasets, unlike fields such as 
       language and vision with internet-scale data, where models trained on larger datasets demonstrate higher generalization ability. 
