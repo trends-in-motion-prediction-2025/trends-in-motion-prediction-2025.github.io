@@ -609,12 +609,25 @@
     </strong></p>
 
     <p><strong>
-      <span class="highlight"><strong>Establish Standardized Benchmarks and Unified Evaluation</strong></span>: The current lack of widely accepted cross-dataset benchmarks due to data 
+      <span class="highlight"><strong>Establish Standardized Benchmarks and Unified Evaluation</strong></span>: 
+      Although recent works have explored generalizable motion prediction through diverse perspectives—ranging from self-supervised learning and 
+      domain adaptation to continual learning, OOD detection, and foundation models—the field remains in its early stages. While progress has been made, 
+      many methods are still exploratory and fragmented, hindered by the lack of standardized evaluation protocols. In particular, the absence of 
+      widely accepted cross-dataset benchmarks contributes to this fragmentation: each paper often adopts its own customized setting—e.g., specific 
+      data scales, shift types, or evaluation metrics—making it difficult to fairly compare methods, assess their generality, or track progress across 
+      the field.
+      Future efforts should focus on establishing unified and realistic evaluation protocols that span multiple tasks, 
+       data regimes, and evaluation metrics. In contrast to classification, where OOD can be defined by unseen labels, benchmarking in regression tasks 
+       like motion prediction requires more nuanced definitions, moving beyond coarse-grained approaches that treat entire different datasets as OOD. Evaluations 
+       should also go beyond accuracy to include uncertainty estimation, which is essential for safety-critical downstream applications. Moreover, 
+       fair comparisons under equal compute budgets are necessary to ensure meaningful assessment of progress.
+      
+      <!-- The current lack of widely accepted cross-dataset benchmarks due to datasest 
       inconsistencies impedes progress. Future efforts must focus on establishing unified, realistic evaluation protocols across multiple 
-      tasks, data scales, and metrics. Benchmarking needs to be rethought for regression tasks like motion prediction, moving beyond 
+      tasks, data scales, and metrics. Going further, generalization benchmarking needs to be rethought for regression tasks like motion prediction, moving beyond 
       coarse-grained approaches that treat entire datasets as OOD to more nuanced definitions. Evaluations should incorporate metrics beyond 
-      just accuracy to include uncertainty estimation, which is crucial for downstream tasks. Fair comparison protocols under equal compute 
-      budgets are also needed.
+      just accuracy to include other considerations, such as uncertainty estimation which is crucial for downstream tasks. Fair comparison protocols under equal compute 
+      budgets are also needed. -->
     </strong></p>
 
     <p><strong>
@@ -633,23 +646,23 @@
 
 
 
-    <p><strong>
+    <!-- <p><strong>
       <span class="highlight"><strong>Explore Test-Time, Online, and Continual Adaptation</strong></span>: These areas are significantly underexplored but critical for real-world deployment 
       in dynamic environments. Future research requires both methodological advances and new datasets designed for studying long-term 
       adaptation over extended time horizons or evolving distributions.
-    </strong></p>
+    </strong></p> -->
 
-    <p><strong>
+    <!-- <p><strong>
       <span class="highlight"><strong>Improve Out-of-Distribution (OOD) Detection and Generalization</strong></span>: This is critical for safety but currently lacks clear definitions and consistent 
       evaluation in motion prediction. Future work needs better OOD definitions, improved uncertainty calibration, and principled evaluation metrics 
       aligned with downstream tasks.
-    </strong></p>
+    </strong></p> -->
 
-    <p><strong>
+    <!-- <p><strong>
       <span class="highlight"><strong>Embrace Generalization as a Continuous Lifecycle</strong></span>: Future systems must treat generalization not as a static challenge but as a system-level, 
       continuous lifecycle problem, involving continuous data acquisition, runtime uncertainty estimation, and online adaptation. Encountering new 
       OOD data in deployment should trigger a new cycle of refinement, potentially involving rethinking architecture, retraining, and updating evaluations.
-    </strong></p>
+    </strong></p> -->
 
       </div>
     </div>
