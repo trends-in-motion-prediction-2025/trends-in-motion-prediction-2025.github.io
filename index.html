@@ -631,17 +631,33 @@
     </strong></p>
 
     <p><strong>
-      <span class="highlight"><strong>Unleash the Power of Foundation Models</strong></span>: This is seen as a promising direction toward open-world generalization. 
-      <span class="highlight"><strong>1) Adapting Existing Foundation Models</strong></span>: Given the data limitations in the motion domain compared to vision and language, adapting existing large foundation 
-      models (e.g., LLMs, video generation models) trained on vast internet-scale data is a compelling but still nascent direction. These 
-      models possess emergent reasoning capabilities and common-sense knowledge that could be leveraged for motion tasks. Challenges include 
-      bridging modality gaps, aligning spatial-temporal reasoning with physical constraints, and integrating them into safety-critical systems. 
-      Exploring their potential for zero-shot or few-shot generalization in the motion domain is a key opportunity. <span class="highlight"><strong>2) Developing Motion-Specific 
-      Foundation Models</strong></span>: There is a need for dedicated research on training large motion models specifically designed for the structured, dynamic 
-      nature of motion data. This involves rethinking data unification, determining suitable architectural modules (tokenization, inductive biases), 
-      and developing adaptation strategies for diverse agents, geographies, and scenarios. <span class="highlight"><strong>3) Leveraging Scale</strong></span>: The success of scaling up resources 
-      ("The Bitter Lesson") in achieving human-like robustness and emergent behaviors in other domains suggests that further scaling up large 
-      foundation models could be a path to achieving similar performance in prediction systems.
+      <span class="highlight"><strong>Unleash the Power of Foundation Models</strong></span>: As data understanding, generalization methods, 
+      and benchmarking continue to mature, foundation models are emerging to unify and extend these capabilities—offering a path toward robust 
+      generalization in the open world. This paradigm builds on transformative advances in computer vision and natural language processing, where a large-parameter model trained with 
+      a large amount of data shows strong zero-shot and few-shot generalization across diverse tasks and modalities.
+      This emerging trend includes two complementary directions:
+      <span class="highlight"><strong>1) Developing Motion-Specific Foundation Models</strong></span>: There is a growing need to 
+      design large models tailored for the structured and dynamic nature of motion data. This involves unifying diverse datasets, 
+      rethinking tokenization and architectural priors, and developing adaptation strategies across agents, geographies, and scenarios.
+      <span class="highlight"><strong>2) Adapting Existing Foundation Models</strong></span>: Given the relatively limited motion 
+      data, adapting general-purpose foundation models (e.g., LLMs, video generation models) trained on internet-scale corpora is 
+      a promising but nascent direction. These models offer emergent reasoning and common-sense capabilities that could benefit 
+      motion tasks, but challenges remain in bridging modality gaps, aligning spatial-temporal reasoning with physical constraints, 
+      and ensuring safe integration into real-world systems. Exploring their potential for zero- and few-shot generalization in 
+      motion prediction is a key research opportunity.
+
+      In essence: the unique robustness to open world distribution shifts that is natural for humans may be an emergent property of 
+      large scale models, and the path to achieving human-like performance in prediction systems may be a matter of further scaling
+       up large foundation models. This aligns with "Bitter Lesson", which emphasizes the simple 
+       importance of scaling up resources over custom-tailored algorithms and architectures. 
+
+      <!-- This is seen as a promising direction toward open-world generalization.  -->
+
+      
+      
+      <!-- <span class="highlight"><strong>3) Leveraging Scale</strong></span>: The success of scaling up resources  -->
+      <!-- ("The Bitter Lesson") in achieving human-like robustness and emergent behaviors in other domains suggests that further scaling up large  -->
+      <!-- foundation models could be a path to achieving similar performance in prediction systems. -->
     </strong></p>
 
 
