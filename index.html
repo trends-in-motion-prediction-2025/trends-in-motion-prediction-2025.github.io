@@ -40,8 +40,22 @@
         max-width: 80% !important;
       }
     } */
-
   </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // 选中所有可折叠标题
+    document.querySelectorAll(".is-collapsible-title").forEach(title => {
+      title.addEventListener("click", () => {
+        title.classList.toggle("is-open");                   // 箭头旋转
+        const body = title.nextElementSibling;               // 紧跟着的内容块
+        if (body && body.classList.contains("is-collapsible-content")) {
+          body.style.display = (body.style.display === "none" || !body.style.display) ? "block" : "none";
+        }
+      });
+    });
+  });
+  </script>
   
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -70,11 +84,33 @@
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/logo.png">
 
+  <img src="./static/images/logo.png" alt="DG Motion Prediction Logo" width="120">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <style>
+    /* 折叠用的公共样式 */
+    .is-collapsible-title {
+      cursor: pointer;
+      user-select: none;
+      text-align: left !important;  /* 打败 Bulma 的 .has-text-centered */
+      width: 100%;                  /* 整行可点，视觉也靠左 */
+    }
+    .is-collapsible-title::after {           /* ⬇ / ⬆ 指示箭头 */
+      content: " ▸";
+      transition: transform 0.2s;
+    }
+    .is-collapsible-title.is-open::after {
+      transform: rotate(90deg);
+    }
+    .is-collapsible-content {
+      display: none;                         /* 默认收起 */
+      overflow: hidden;
+    }
+  </style>
 </head>
 <body>
 
@@ -221,7 +257,7 @@
 
           <p>
             <strong>
-              Our roadmap is illustrated
+              Our roadmap toward deployable and generalizable models for autonomous systems is illustrated
               as following. We posit that the research community needs to revisit
               <span class="highlight"><strong>four key challenges in the deployable of motion prediction methods</strong></span>,
               including&nbsp;1) the design of inter-module representations,&nbsp;2) awareness of uncertainty and errors
@@ -247,19 +283,21 @@
         <div class="content has-text-justified">
           <img src="./static/images/fig_1-vision_h.png">
           
-          <p><strong>Roadmap toward deployable and generalizable models for autonomous systems.</strong> 
-            
-            (a) Models intended for real-world deployment should be developed and evaluated under realistic settings, which require: (1) adopting inter-module
+          <p><strong>
+            (a) <span class="highlight"><strong>Deployable Considerations</strong></span>. Models intended for real-world deployment should be developed and evaluated under realistic settings, which require: (1) adopting inter-module
             representations that are informative, efficient, and scalable with data; (2) managing uncertainty throughout the autonomy
             stack; (3) enabling joint learning across modules to promote information sharing and resolve incompatibilities; and (4) aligning
-            evaluation with the performance of the full closed-loop system. 
-            
-            (b) The resulting models and evaluation protocols are then
+            evaluation with the performance of the full closed-loop system.
+          </strong></p>
+          
+          <p><strong>
+            (b) <span class="highlight"><strong>Generalization Lifecycle</strong></span>. The resulting models and evaluation protocols are then
             integrated into a generalization cycle that: (1) absorbs diverse data to broaden the support of the training distribution; (2)
             learns representations capable of generalizing across a wide range of operational domains; (3) handles sporadic distribution
             shifts during deployment to ensure safety; and (4) adapts online to anticipate and respond to episodic distribution changes.
             The lifelong learning system incrementally updates the database with newly encountered OOD data to expand the data
-            coverage, thereby initiating the next generalization cycle to further expand the operational envelope of the system.</p>
+            coverage, thereby initiating the next generalization cycle to further expand the operational envelope of the system.
+          </strong></p>
         </div>
       </div>
     </div>
@@ -270,7 +308,21 @@
 
 <section class="hero teaser" style="margin-bottom: 4rem;">
   <div class="container is-max-desktop">
-    <h2 class="title is-3" style="color: #4873c2;">Deploying Motion Prediction within Real-World Autonomous Systems</h2>
+    <h2 class="title is-2" style="color: #4873c2;">Deployability in Motion Prediction</h2>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <div class="content has-text-justified">
+          <p><strong>(Click subsection titles to expand the details)</strong></p>
+    </div>
+  </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser" style="margin-bottom: 4rem;">
+  <div class="container is-fluid">
+    <h2 class="title is-3 is-collapsible-title" style="color: #4873c2;">Deploying Motion Prediction within Real-World Autonomous Systems</h2>
+    <div class="is-collapsible-content">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <div class="content has-text-justified">
@@ -283,12 +335,12 @@
         each component. Specifically, for motion prediction, existing benchmarks often provide curated and noise-free upstream 
         perception input, usually utilize trajectories as the interface between upstream and downstream modules, and focus solely 
         on open-loop prediction accuracy without considering the impact on downstream planning and control. This paradigm has 
-        been highly successful, fostering the development of innovative methodologies and representations. However, when deployed 
-        in real-world settings that can deviate from such idealized training conditions, state-of-the-art motion prediction models 
-        can come with reduced effectiveness and reliability in deployment. In this section, we discuss the approaches, challenges, 
-        and perspectives of developing motion prediction models under realistic deployment standards in autonomous systems, where 
-        several key problems emerge: 1) perception-prediction integration; 2) prediction-planning integration; 3) system-level 
-        closed-loop evaluation.
+        been highly successful, fostering the development of innovative methodologies and representations. 
+        <span class="highlight"><strong>However, when deployed in real-world settings that can deviate from such idealized 
+        training conditions, state-of-the-art motion prediction models can come with reduced effectiveness and reliability in deployment</strong></span>. 
+        In this section, we discuss the approaches, challenges, and perspectives of developing motion prediction models under realistic 
+        deployment standards in autonomous systems, where several key problems emerge: 1) perception-prediction integration; 
+        2) prediction-planning integration; 3) system-level closed-loop evaluation.
     </strong></p>
     <div class="content has-text-justified">
       <img src="./static/images/end_to_end.png">
@@ -303,12 +355,14 @@
       </div>
     </div>
   </div>
+  </div>
 </section>
 
 
 <section class="hero teaser" style="margin-bottom: 4rem;">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3" style="color: #4873c2;">Deployability: Perception-Prediction Intergration</h2>
+  <div class="container is-fluid">
+    <h2 class="title is-3 is-collapsible-title" style="color: #4873c2;">Deployability: Perception-Prediction Intergration</h2>
+    <div class="is-collapsible-content">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <div class="content has-text-justified">
@@ -333,11 +387,13 @@
       </div>
     </div>
   </div>
+  </div>
 </section>
 
 <section class="hero teaser" style="margin-bottom: 4rem;">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3" style="color: #4873c2;">Deployability: Prediction-Planning Intergration</h2>
+  <div class="container is-fluid">
+    <h2 class="title is-3 is-collapsible-title" style="color: #4873c2;">Deployability: Prediction-Planning Intergration</h2>
+    <div class="is-collapsible-content">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <div class="content has-text-justified">
@@ -363,12 +419,14 @@
     </div>
   </div>
 </div>
+  </div>
 </section>
 
 
 <section class="hero teaser" style="margin-bottom: 4rem;">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3" style="color: #4873c2;">Deployability: Evaluation</h2>
+  <div class="container is-fluid">
+    <h2 class="title is-3 is-collapsible-title" style="color: #4873c2;">Deployability: Evaluation</h2>
+    <div class="is-collapsible-content">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <div class="content has-text-justified">
@@ -393,12 +451,14 @@
     </div>
   </div>
 </div>
+</div>
 </section>
 
 
 <section class="hero teaser" style="margin-bottom: 4rem;">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3" style="color: #4873c2;">Deployability: Future Outlooks</h2>
+  <div class="container is-fluid">
+    <h2 class="title is-3 is-collapsible-title" style="color: #4873c2;">Deployability: Future Outlooks</h2>
+    <div class="is-collapsible-content">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <div class="content has-text-justified">
@@ -450,12 +510,26 @@
     </div>
   </div>
 </div>
+  </div>
 </section>
-
 
 <section class="hero teaser" style="margin-bottom: 4rem;">
   <div class="container is-max-desktop">
-    <h2 class="title is-3" style="color: #4873c2;">Generalizable Motion Prediction</h2>
+    <h2 class="title is-2" style="color: #4873c2;">Generalization in Motion Prediction</h2>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <div class="content has-text-justified">
+          <p><strong>(Click subsection titles to expand the details)</strong></p>
+    </div>
+  </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser" style="margin-bottom: 4rem;">
+  <div class="container is-fluid">
+    <h2 class="title is-3 is-collapsible-title" style="color: #4873c2;">Generalization: Data, Architecture and Optimization</h2>
+    <div class="is-collapsible-content">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <div class="content has-text-justified">
@@ -548,12 +622,14 @@
     </div>
   </div>
 </div>
+  </div>
 </section>
 
 
 <section class="hero teaser" style="margin-bottom: 4rem;">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3" style="color: #4873c2;">Generalization: Future Outlooks</h2>
+  <div class="container is-fluid">
+    <h2 class="title is-3 is-collapsible-title" style="color: #4873c2;">Generalization: Future Outlooks</h2>
+    <div class="is-collapsible-content">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <div class="content has-text-justified">
@@ -691,6 +767,7 @@
     </div>
   </div>
 </div>
+  </div>
 </section>
 
 
