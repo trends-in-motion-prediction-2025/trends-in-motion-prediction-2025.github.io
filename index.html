@@ -338,7 +338,8 @@
                 In this section, we discuss the approaches, challenges, and perspectives of developing motion prediction models under realistic 
                 deployment standards in autonomous systems, where several key problems emerge from: 1) perception-prediction integration; 
                 2) prediction-planning integration; 3) system-level closed-loop evaluation. 
-                Click the following section titles to see <span class="highlight"><strong> our insights and more details on these three problems.</strong></span>)
+                In our paper, we provide thorough discussions and insights on them, 
+                click the following section titles to see <span class="highlight"><strong> the takeaways</strong></span>)
             </strong></p>
             <div class="content has-text-justified">
               <img src="./static/images/deployable.png">
@@ -358,11 +359,13 @@
                   future evolution of objects or a scene. <span class="highlight"><strong>The seamless integration between perception and prediction is
                   crucial for efficient information propagation and overall system safety and performance</strong></span>. This integration
                   requires 1) <span class="highlight"><strong>Representation:</strong></span> proper design of representations and the interface between the two modules that enable smooth
-                  information propagation and efficient computation; 2) <span class="highlight"><strong>Uncertainty:</strong></span> propagating, calibrating, and eventually reducing
-                  the uncertainties and errors from upstream perception to enable robust prediction; 3) <span class="highlight"><strong>Joint Learning:</strong></span> joint learning and
-                  temporal information pass of the two modules to facilitating information sharing and align the optimization
+                  information propagation and efficient computation, such as trajectories, occupancy, latent feature, raw sensor data such as videos and point clouds;
+                  2) <span class="highlight"><strong>Uncertainty:</strong></span> propagating, calibrating, and eventually reducing
+                  the uncertainties and errors from upstream perception (e.g. detection, tracking, mapping) to enable robust prediction; 
+                  3) <span class="highlight"><strong>Joint Learning:</strong></span> joint learning and
+                  temporal information fusion of the perception and prediction to facilitating information sharing and align the optimization
                   to the performance of the overall system. These concepts are illustrated in the folowing figure and are explored
-                  in greater detail in the paper.
+                  in greater details in the paper.
                 </strong></p>
                 <div class="content has-text-justified">
                   <img src="./static/images/fig_17-perception_integration.png">
