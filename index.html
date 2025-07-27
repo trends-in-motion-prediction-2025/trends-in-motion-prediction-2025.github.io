@@ -286,19 +286,19 @@
           </p>  
           
           <p><strong>
-            (a) <span class="highlight"><strong>Deployable Considerations</strong></span>. Models intended for real-world deployment should be 
-            developed and evaluated under realistic settings of the closed-loop autonomoy stack, which require: (1) adopting inter-module
-            representations that are informative, efficient, and scalable with data; (2) managing uncertainty throughout the autonomy
-            stack; (3) enabling joint learning across modules to promote information sharing and resolve incompatibilities; and (4) aligning
-            evaluation with the performance of the full closed-loop system.
+            (a) <span class="highlight"><strong>Deployable Considerations</strong></span>. Models intended for deployment in real-world autonomy should be 
+            developed and evaluated under realistic settings of the closed-loop autonomoy stack, which require: (1) Representation: adopting inter-module
+            representations that are informative, efficient, and scalable with data; (2) Uncertainty: quantifying, progagating, calibrating, and ultimately reduce the
+             uncertainty throughout the autonomy stack; (3) Joint Learning: enabling joint learning across modules to promote information sharing and resolve
+              incompatibilities; and (4) System-Aligned Evaluation: aligning evaluation with the performance of the full closed-loop system.
           </strong></p>
           
           <p><strong>
-            (b) <span class="highlight"><strong>Generalization Lifecycle</strong></span>. The resulting models and evaluation protocols are then
-            integrated into a generalization cycle that: (1) absorbs diverse data to broaden the support of the training distribution; (2)
-            learns representations capable of generalizing across a wide range of operational domains; (3) handles sporadic distribution
-            shifts during deployment to ensure safety; and (4) adapts online to anticipate and respond to episodic distribution changes.
-            The lifelong learning system incrementally updates the database with newly encountered OOD data to expand the data
+            (b) <span class="highlight"><strong>Generalization Lifecycle</strong></span>. The resulting models and evaluation protocols should then be
+            integrated into a generalization cycle that includes: (1) Data Engine: absorbs diverse data to broaden the support of the training distribution; (2)
+            Training: learns representations capable of generalizing across a wide range of operational domains; (3) Test-Time Robustness: handles sporadic distribution
+            shifts during deployment to ensure safety; and (4) Test-Time Adaptation: adapts online to anticipate and respond to episodic distribution changes.
+            After each cycle, the lifelong learning system updates the database with newly encountered OOD data to expand the data
             coverage, thereby initiating the next generalization cycle to further expand the operational envelope of the system.
           </strong></p>
         </div>
