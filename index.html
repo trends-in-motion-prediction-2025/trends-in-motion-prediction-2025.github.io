@@ -381,12 +381,14 @@
                   In typical autonomy architectures, 
                   motion prediction provides essential inputs for motion planning to generate safe and efficient ego trajectories.
                   As we approach the end of the autonomy stack, it introduces additional design desiderata beyond accuracy, 
-                  <span class="highlight"><strong>placing greater emphasis on real-world closed-loop performance, robustness, and compatibility with planning algorithms.</strong></span>
+                  <span class="highlight"><strong>placing greater emphasis on compatibility with planning algorithms and real-world closed-loop system performance and safety.</strong></span>
                   Achieving seamless integration with planning involves 1) <span class="highlight"><strong>Representation:</strong></span> choosing suitable representations at the prediction–planning
                   interface that enable effective information propagation, computational efficiency, and compatibility with downstream
-                  modules; 2) <span class="highlight"><strong>Uncertainty:</strong></span> it also requires properly propagating, calibrating, and ultimately reducing the uncertainties and errors 
-                  from prediction to support robust and risk-aware planning; 3) <span class="highlight"><strong>Joint Learning:</strong></span> furthermore, joint learning of prediction and planning
-                  encourages the design of prediction outputs that are better structured for direct consumption by planning algorithms.
+                  modules, such as trajectories, occupancy, latent features, motion maneuver/skills, and sensor-level representations; 
+                  2) <span class="highlight"><strong>Uncertainty:</strong></span> it also requires properly propagating, calibrating, and ultimately reducing the uncertainties and errors 
+                  from prediction to support robust and risk-aware planning; 
+                  3) <span class="highlight"><strong>Joint Learning:</strong></span> furthermore, joint learning of prediction and planning
+                  encourages the design of prediction outputs that are better structured for direct consumption by planning algorithms, which is especially crutical in interaction-intense scenarios.
                   These concepts are illustrated in the followin figure and are explored in greater detail in the paper.
                 </strong></p>
                 <div class="content has-text-justified">
@@ -403,7 +405,7 @@
                   module within the closed-loop autonomy stack, receiving inputs from upstream localization and perception,
                   and informing downstream planning and control. However, existing benchmarks typically adopt a simplified
                   evaluation setting, where prediction is assessed independently of other modules and in an open-loop manner.
-                  Specifically, they often assume idealized, curated perception inputs without accounting for associated
+                  Specifically, they often assume trajectories as the only intereface, idealized and curated perception inputs without accounting for associated
                   noise and errors, and disregard how prediction results are consumed by downstream planning. Moreover,
                   evaluations are typically conducted in open-loop settings, overlooking important aspects such as temporal
                   consistency, ultimate task performance, and computation efficiency. <span class="highlight"><strong>To more accurately reflect real-world
@@ -411,7 +413,8 @@
                   metrics, and closed-loop dynamics</strong></span>, which we illustrate in the following figure and discuss in the paper, respectively.
                 </strong></p>
                 <div class="content has-text-justified">
-                  <img src="./static/images/fig_20-evaluation.png">
+                  <!-- <img src="./static/images/fig_20-evaluation.png"> -->
+                  <img src="./static/images/fig_20-evaluation.png" width="300">
                 </div>
               </div>
             </div>
