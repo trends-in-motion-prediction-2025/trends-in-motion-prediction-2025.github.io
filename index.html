@@ -322,6 +322,156 @@
 
 <section class="hero teaser" style="margin-bottom: 4rem;">
   <div class="container is-max-desktop">
+    <h2 class="title is-2" style="color: #4873c2;">Taxonomy of Motion Prediction Methods</h2>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+
+          <!-- <h2 class="title is-4 is-collapsible-title" style="color: #4873c2;">Deploying Motion Prediction within Real-World Autonomous Systems</h2> -->
+          <!-- <div class="is-collapsible-content"> -->
+            <!-- <div class="content has-text-justified">
+              <img src="./static/images/motion_prediction_category.png">
+            </div> -->
+
+            <!-- <div class="is-collapsible-content"> -->
+            <div class="content has-text-justified">
+              <p><strong>
+                When intelligent autonomous systems are deployed in real-world environments, they have to coexist
+                and interact with other agents of those spaces. To understand the surroundings and make efficient and safe decisions, 
+                <span class="highlight"><strong>these systems need to observe, reason about, and predict the future motion of other 
+                agents and the future evolution of the environment.</strong></span> This is challenging due to the complexity of 
+                agents behavior and the interdependence between agents and their environments. Factors such as task goals, 
+                social norms, interactions between agents, environmental layout, and legal constraints all influence agents behavior. 
+                While the major focus of this paper is on the deployability and generalizability of motion
+                prediction, we include this brief taxonomy of motion prediction models as supporting background knowledge.
+            </strong></p>
+            <div class="content has-text-justified">
+              <img src="./static/images/taxonomy.png">
+            </div>
+            <!-- </div> -->
+            </div>
+
+            <p><strong>
+              (CLICK the following section titles to revist motion prediction)
+            </strong></p>
+
+            <h2 class="title is-4 is-collapsible-title" style="color: #4873c2;">Taxonomy: Input and Output Modalities</h2>
+            <div class="is-collapsible-content">
+              <div class="content has-text-justified">
+                <p><strong>
+                  Ideally, motion prediction models need to consume all the motion factors available to them as inputs in
+                  order to produce high-quality predictions. Achieving this requires input and output representations that
+                  accurately capture these factors and comprehensively describe the predicted behaviors.
+                  In light of such complexity, the research community has devoted increasing attention to understanding
+                  and modeling the temporal evolution of dynamic objects and scenes. The field has progressed rapidly,
+                  transitioning from early physics- and planning-based paradigms to the prevailing wave of learning-based
+                  approaches. This evolution has been accompanied by a growing diversity of representational choices—from
+                  compact formats such as <span class="highlight"><strong>trajectories, motion primitives, and flows,</strong></span> valued for their efficiency and interpretability, 
+                  to sensor-level inputs like <span class="highlight"><strong>video and point clouds,</strong></span> enabled by advances in computational
+                  resources and the emergence of the world model concept, and further to latent representations such as
+                  tokens and queries.
+                </strong></p>
+                <div class="content has-text-justified">
+                  <img src="./static/images/motion_prediction_category.png">
+                </div>
+              </div>
+            </div>
+            
+            <h2 class="title is-4 is-collapsible-title" style="color: #4873c2;">Taxonomy: Application Domains</h2>
+            <div class="is-collapsible-content">
+              <div class="content has-text-justified">
+                <p><strong>
+                  Motion prediction is a common challenge across multiple domains, which has resulted in overlapping
+                  methodologies that are shared across application domains, and also many methods that are specific to the
+                  unique requirements of each domain. Foremost is <span class="highlight"><strong>Autonomous Driving and Navigation</strong></span>, which strives to automate safe navigation along roadways. 
+                  This domain significantly drives motion prediction research due to the need for high-accuracy, real-time predictions of 2D ground-level states 
+                  for various road agents like vehicles, pedestrians, and cyclists. Predictive models here integrate historical states, road maps, and traffic regulations.
+                  Another vital area is <span class="highlight"><strong>Robotics and Human-Robot Interaction (HRI),</strong></span> crucial for robots to operate safely around humans in diverse unstructured environments
+                  such as homes or factories. This field currently faces limitations from less standardized datasets and evaluation protocols. Visual Motion Understanding 
+                  represents another domain, with applications in <span class="highlight"><strong>video surveillance, various forms of monitoring</strong></span> (e.g., crowd control, industrial safety), and the generation 
+                  of <span class="highlight"><strong>realistic human motion for virtual/augmented reality (VR/AR).</strong></span> Finally, motion prediction is recognized as a specialized form of <span class="highlight"><strong>general time-series prediction.</strong></span> 
+                  Its methodologies are broadly applicable to other time-series tasks, including weather forecasting, financial market analysis, healthcare monitoring, and energy demand forecasting.
+                </strong></p>
+                <div class="content has-text-justified">
+                  <img src="./static/images/applications.png">
+                </div>
+                <div class="content has-text-justified">
+                  <img src="./static/images/human_motion.png">
+                </div>
+              </div>
+            </div>
+
+            <!-- <h2 class="title is-4 is-collapsible-title" style="color: #4873c2;">Deployability: Evaluation</h2>
+            <div class="is-collapsible-content">
+              <div class="content has-text-justified">
+                <p><strong>
+                  As we just discussed above, in realistic deployment, motion prediction does not operate in isolation, but functions as a critical
+                  module within the closed-loop autonomy stack, receiving inputs from upstream localization and perception,
+                  and informing downstream planning and control. However, existing benchmarks typically adopt a simplified
+                  evaluation setting, where prediction is assessed independently of other modules and in an open-loop manner.
+                  Specifically, they often assume trajectories as the only intereface, idealized and curated perception inputs without accounting for associated
+                  noise and errors, and disregard how prediction results are consumed by downstream planning. Moreover,
+                  evaluations are typically conducted in open-loop settings, overlooking important aspects such as temporal
+                  consistency, ultimate task performance, and computation efficiency. <span class="highlight"><strong>To more accurately reflect real-world
+                  performance, a realistic evaluation framework must incorporate perception-aware metrics, planning-oriented
+                  metrics, and closed-loop dynamics</strong></span>, which we illustrate in the following figure and discuss in the paper, respectively.
+                </strong></p>
+                <div class="content has-text-justified">
+                  <img src="./static/images/fig_20-evaluation.png" width="700">
+                </div>
+              </div>
+            </div> -->
+
+            <!-- <h2 class="title is-4 is-collapsible-title" style="color: #4873c2;">Deployability: Future Outlooks</h2>
+            <div class="is-collapsible-content">
+              <div class="content has-text-justified">
+                <p><strong>
+                  The interplay between perception, prediction, and planning demonstrates that motion
+                  prediction cannot be treated in isolation. Instead, it requires holistic approaches that account for intermodule information 
+                  sharing and compatibility, the cascading effects of errors, and alignment with systemlevel performance. Despite significant 
+                  advancements in applying motion prediction to real-world robotics
+                  applications, several challenges persist that present <span class="highlight"><strong>opportunities for future research</strong></span>. We list some of them here and discuss them in greater details in the paper.
+                </strong></p>
+                
+                <p><strong>
+                  <span class="highlight"><strong>Holistic Integration</strong></span>: We are revolutionizing motion prediction by integrating it seamlessly into the full autonomy stack, 
+                  moving beyond isolated components. This means tackling cascading errors from upstream perception and ensuring alignment with 
+                  ultimate system performance, requiring holistic approaches for robust, real-world deployment.
+                </strong></p>
+            
+                <p><strong>
+                  <span class="highlight"><strong>Real-World Evaluation</strong></span>: Bridging the gap between idealized lab tests and challenging real-world conditions is paramount. 
+                  Evaluation must account for uncertainties, reflect downstream utility for planners, and prioritize temporal consistency, 
+                  computation latency, and task-oriented metrics. New benchmarks are essential to capture this complexity.
+                </strong></p>
+            
+                <p><strong>
+                  <span class="highlight"><strong>Task-Oriented Performance</strong></span>: Success isn't just about prediction accuracy, but about enabling ultimate task completion – 
+                  like a vehicle reaching its destination safely and efficiently. This demands confident, well-calibrated predictions that 
+                  support effective planning, revealing critical issues missed by traditional metrics.
+                </strong></p>
+            
+                <p><strong>
+                  <span class="highlight"><strong>End-to-End Autonomy</strong></span>: Exploring unified, data-driven frameworks that integrate perception, prediction, and planning offers immense 
+                  potential. This trend aims for streamlined pipelines, enhanced scalability, and improved adaptability, promising breakthroughs in 
+                  performance, reliability, and robustness.
+                </strong></p>
+            
+                <p><strong>
+                  <span class="highlight"><strong>Foundation Model Power</strong></span>: Harnessing the capabilities of large foundation models is key to advancing both modular and end-to-end systems. 
+                  Overcoming the challenge of collecting scarce motion data requires innovative strategies, alongside developing methods for efficient 
+                  deployment under real-time constraints.
+                </strong></p>
+              </div>
+            </div> -->
+            
+    </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser" style="margin-bottom: 4rem;">
+  <div class="container is-max-desktop">
     <h2 class="title is-2" style="color: #4873c2;">Deployability in Motion Prediction</h2>
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
